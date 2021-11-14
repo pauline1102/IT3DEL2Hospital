@@ -4,7 +4,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Connection;
 import java.util.List;
-
+@Deprecated
 @Path("patients")
 public class PatientService {
 

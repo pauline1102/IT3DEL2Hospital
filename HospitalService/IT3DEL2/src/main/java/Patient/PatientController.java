@@ -2,7 +2,7 @@ package Patient;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Deprecated
 public class PatientController {
 
     private PatientDAO patientDAO;

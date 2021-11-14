@@ -55,8 +55,8 @@ div class="header" id="myHeader">
     <u class="underlineHeader" color="dodgerblue"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
     <text class="header2">Elektronisk patient journal</text><br>
     <text class="header3">Anno 2021</text><br>
-    <p><button id="idButton" class="button1">Annuller</button></p>
-    <p><button id="idButton2" class="button1">Gem</button></p>
+    <p><button id="idButton" class="button1" onclick="">Annuller</button></p>
+    <!--<p><button id="idButton2" class="button1">Gem</button></p>-->
 </div>
 <div>
     <p class="overskriftside"> Opret konsultation</p>
@@ -67,9 +67,13 @@ div class="header" id="myHeader">
     <input type="text" name="cpr" placeholder="CPR-nummer">
 </form>
 
-<button onclick="opretKonsultation();">Opret konsultation</button>
-<button onclick="hentKonsultation();">Hent konsultation</button>
+<br>
 
+<button onclick="opretKonsultation();">Opret konsultation</button>
+<br>
+<br>
+<button onclick="hentKonsultation();">Hent konsultation</button>
+<!--
 <div class="tekstoverskrift">
     <text id="piOverskrift">Patient info</text>
     <text id="vdOverskrift">Vælg dato</text>
@@ -77,15 +81,23 @@ div class="header" id="myHeader">
     <text id="vvOverskrift">Vælg varighed</text>
     <text id="tnOverskrift">Tilføj notat</text>
 </div>
-<li id="aftaler">
+-->
+<br>
+<br>
+<div>
+    <div class="tekstoverskrift">
+        Konsultationer i databasen
+    </div>
+    <ul id="aftaler">
+    </ul>
+</div>
 
-</li>
 
 
-
-<div id="wrap"> <!--http://jsfiddle.net/itz2k13/KAwEz/-->
+<!--
+<div id="wrap">http://jsfiddle.net/itz2k13/KAwEz/
     <div id="patientinfo">Efternavn, Fornavn <br> <br> CPR-nummer:
-        0123456-7890 <br> <p>Valgte tid: <br> 5/10, 12:30</p></div><!-- indsæt et eller andet felt der kan vise hentet tekst fra andet vindue-->
+        0123456-7890 <br> <p>Valgte tid: <br> 5/10, 12:30</p></div> indsæt et eller andet felt der kan vise hentet tekst fra andet vindue
     <div id="vælgdato">
         <select size="20"class="options">
             <option value="5/10">5/10</option>
@@ -136,5 +148,6 @@ div class="header" id="myHeader">
     </div>
     <label for="tilføjnotat" class="tekstoverskrift"></label><textarea id="tilføjnotat">Tilføj notat her</textarea>
 </div>
+-->
 </body>
 </html>
