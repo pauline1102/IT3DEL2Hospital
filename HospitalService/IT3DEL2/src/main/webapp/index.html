@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--     root = true -->
 <head>
     <meta charset="UTF-8">
     <title>index/Forside</title>
@@ -8,39 +9,42 @@
 </head>
 <body>
 <div class="header" id="myHeader">
-    <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
-    <text class="header2">Elektronisk patient journal</text><br>
-    <text class="header3">Anno 2021</text> <br>
+    <u class="underlineHeader">
+        <text class="header1">Sundhedsplatformen 2.0</text>
+    </u><br>
+    <text class="header2">Elektronisk patient journal</text>
+    <br>
+    <text class="header3">Anno 2021</text>
+    <br>
     <!--<p><button id="idButton" class="button1" >Annuller</button></p> -->
-   <!-- <p><button id="iddButton" class="button2" >Gem</button></p>-->
+    <!-- <p><button id="iddButton" class="button2" >Gem</button></p>-->
 </div>
 
-
-<p class="overskriftside"> Velkommen til sundhedsplatformen 2.0</p>
-<!--style="position:absolute;width:100px; margin-bottom: 50px" -->
-
-<div id="loginkasse">
+<div>
+    <div id="sundoverskrift">
+        <p class="overskriftside"> Velkommen til sundhedsplatformen 2.0</p>
+    </div>
     <div id="loginkasse2">
         <div id="brugernavn1">
             <label for="Brugernavn" style="width:250px"> Brugernavn:</label><br>
         </div>
 
         <div style="position:absolute; margin-left: 100px">
-            <input type="text" id="brugernavn" name=brugernavn" required ><br>
+            <input type="text" id="brugernavn" name=brugernavn" required><br>
         </div>
         <br><br>
         <div style="width:1px; background-color:whitesmoke; position:absolute">
             <label for="Kodeord">Kodeord:</label><br>
         </div>
 
-        <div style="position:absolute;margin-left: 100px"><input type="kodeord" id="Kodeord" name="Kodeord" required><br><br>
-        </div><br>
-        <div id="loginknap"> <a href="PatientForside.html"><input type="button" value="Login"></a></div>
+        <div style="position:absolute;margin-left: 100px"><input type="kodeord" id="Kodeord" name="Kodeord"
+                                                                 required><br><br>
+        </div>
+        <br>
+        <div id="loginknap"><a href="PatientForside.html"><input type="button" value="Login"></a></div>
 
     </div>
 </div>
-<br><br>
-
-
 
 </body>
+</html>

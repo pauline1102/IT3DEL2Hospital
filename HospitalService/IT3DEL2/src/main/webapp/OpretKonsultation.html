@@ -58,21 +58,36 @@ div class="header" id="myHeader">
     <p><a href="index.html"><input type="button" id="idButton" class="button1" value="Log ud"></a></p>
     <!--<p><button id="idButton2" class="button1">Gem</button></p>-->
 </div>
-<div>
-    <p class="overskriftside"> Opret konsultation</p>
+
+<div id="opretkonsdiv">
+    <div id="opretkonsoverskrift">
+        <p class="overskriftside"> Opret konsultation</p>
+    </div>
+    <div>
+
+        <form id="aftaleform">
+            <input type="date" name="date">
+            <input type="text" name="cpr" placeholder="CPR-nummer">
+        </form>
+
+        <br>
+
+        <button onclick="opretKonsultation();">Opret konsultation</button>
+        <br>
+        <br>
+        <button onclick="hentKonsultation();">Hent konsultation</button>
+    </div>
+    <br>
+    <br>
+    <div>
+        <div class="tekstoverskrift">
+            Konsultationer i databasen
+        </div>
+        <ul id="aftaler">
+        </ul>
+    </div>
 </div>
 
-<form id="aftaleform">
-    <input type="date" name="date">
-    <input type="text" name="cpr" placeholder="CPR-nummer">
-</form>
-
-<br>
-
-<button onclick="opretKonsultation();">Opret konsultation</button>
-<br>
-<br>
-<button onclick="hentKonsultation();">Hent konsultation</button>
 <!--
 <div class="tekstoverskrift">
     <text id="piOverskrift">Patient info</text>
@@ -82,15 +97,8 @@ div class="header" id="myHeader">
     <text id="tnOverskrift">Tilføj notat</text>
 </div>
 -->
-<br>
-<br>
-<div>
-    <div class="tekstoverskrift">
-        Konsultationer i databasen
-    </div>
-    <ul id="aftaler">
-    </ul>
-</div>
+
+
 
 
 

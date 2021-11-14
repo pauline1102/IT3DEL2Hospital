@@ -87,17 +87,17 @@ h8{
 
 }
 
-#loginkasse{
-    width: 100%;
-}
+#sundoverskrift{
+    position: absolute;
 
+}
 #brugernavn1{
     position:absolute;width:100px; margin-bottom: 50px
 }
 
 #loginkasse2{
-    margin:auto;
-    width: 50%;
+    margin-left: 10px;
+    position: relative;
 }
 
 #loginknap{
