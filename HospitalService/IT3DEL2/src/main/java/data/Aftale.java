@@ -1,11 +1,13 @@
-package Aftale;
-
-import java.util.Date;
+package data;
 
 public class Aftale {
 
     private String date;
     private String cpr;
+
+    public Aftale(){
+
+    }
 
     public Aftale(String date, String cpr){
         this.date = date;
