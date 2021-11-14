@@ -1,0 +1,22 @@
+.Btncontainer{
+width: 100%;
+    position: relative;
+
+}
+
+.OpretKonsultationBtn{
+    width: 200px;
+    position: absolute;
+    float: left;
+    margin-left: 50%;
+    margin-top: 50px;
+    transform: translate(-50%);
+}
+#kalenderbillede{
+    width: 100%;
+
+}
+
+#opretkonsultationknap{
+    width: 100%;
+}
