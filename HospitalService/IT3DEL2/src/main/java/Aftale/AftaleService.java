@@ -1,8 +1,5 @@
 package Aftale;
 
-import Patient.Patient;
-
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.*;
@@ -36,6 +33,7 @@ public class AftaleService {
     public void opretAftale(Aftale aftale) {
         aftaleDAO.addAftale(aftale);
         addAftale(aftale);
+
     }
 
     @GET
@@ -63,33 +61,31 @@ public class AftaleService {
 
         @PUT
         @Consumes(MediaType.APPLICATION_JSON)
-        public void editAftale(String cpr, Date nyDate){
+        public void editAftale(String cpr, String nyDate){
             for (Aftale aftale : aftaleDAO.getAftaler()) {
                 if (aftale.getCpr().equals(cpr)) {
-                    Date beforeDate = aftale.getDate();
+                    String beforeDate = aftale.getDate();
                     aftale.setDate(nyDate);
                     System.out.println("Aftale with patient: " + cpr + " has been changed from: " + beforeDate + " to: " + nyDate);
                 }
             }
         }
 
-        // Her starter metoderne for at gemme jeres data til databasen.
+        // Her starter metoderne for at gemme data til databasen.
 
         public void addAftale (Aftale aftale){
-            int year = aftale.getDate().getYear();
-            int month = aftale.getDate().getMonth();
-            int day = aftale.getDate().getDay();
 
-            String insertAftale = "INSERT INTO aftale (CPR, date)" + " VALUES (" + aftale.getCpr() + ", '"+ year + "-" + month + "-" + day + "');";
+            String insertAftale = "INSERT INTO aftale (CPR, date)" + " VALUES (?,?);";
             System.out.println(insertAftale);
 
             try {
                 preparedStatement = connection.prepareStatement(insertAftale);
                 preparedStatement.setString(1, aftale.getCpr());
-                preparedStatement.setDate(2, (java.sql.Date) aftale.getDate());
+                preparedStatement.setString(2, aftale.getDate());
                 preparedStatement.execute();
             } catch (SQLException ex) {
                 System.out.println("Ups.. Der opstod en fejl under oprettelsen af aftalen. Prøv igen eller kontakt udviklerne!");
+                ex.printStackTrace();
             }
         }
 
@@ -110,15 +106,15 @@ public class AftaleService {
             return CPRnr;
         }
 
-        public String hentDato (String cpr) throws NullPointerException {
-            String patientaftale = "SELECT date FROM sundtek.aftale where cpr =" + cpr + ";";
-            String date = "";
+        public List<String> hentDato (String cpr) throws NullPointerException {
+            String patientaftale = "SELECT date FROM sundtek.aftale where cpr = '10-12-1999-7070'";
+            List<String> date = new ArrayList<>();
             try {
                 statement = connection.createStatement();
                 resultSet = statement.executeQuery(patientaftale);
                 while (resultSet.next()) {
-                    Date datedata = resultSet.getDate(2);
-                    date = String.valueOf(datedata);
+                    date.add(resultSet.getString(1));
+
                 }
             } catch (SQLException g) {
                 g.printStackTrace();

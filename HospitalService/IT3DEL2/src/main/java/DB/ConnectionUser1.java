@@ -2,6 +2,7 @@ package DB;
 
 import Aftale.Aftale;
 import Aftale.AftaleController;
+import Hospital.Hospital;
 
 import javax.validation.constraints.Null;
 import java.sql.*;
@@ -25,3 +26,4 @@ public class ConnectionUser1 {
 
 }
 
+//Hospital.getAftaleService().addAftale(new Aftale(cpr, date));

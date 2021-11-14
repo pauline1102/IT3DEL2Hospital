@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class Aftale {
 
-    private Date date;
+    private String date;
     private String cpr;
 
-    public Aftale(Date date, String cpr){
+    public Aftale(String date, String cpr){
         this.date = date;
         this.cpr = cpr;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
