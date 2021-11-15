@@ -88,18 +88,26 @@ h8{
 }
 
 #sundoverskrift{
-    position: absolute;
+    position: relative;
 
-}
-#brugernavn1{
-    position:absolute;width:100px; margin-bottom: 50px
 }
 
 #loginkasse2{
-    margin-left: 10px;
     position: relative;
+    width: 100px;
+
+ }
+
+#bruger1{
+    position:absolute;
+    width:100px;
+    margin-bottom: 50px
 }
 
+#brugernavn1{
+    position: absolute;
+
+}
 #loginknap{
     margin-left: 210px ;
     margin-top:20px;
