@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnector {
 
         private static Connection connection = null;
-        private static String MYSQLDriver = "jdbc:mysql://" + "localhost:3306/";
+        private static String MYSQLDriver = "jdbc:mysql://" + "mysql-db.caprover.diplomportal.dk:3306/";
         private static String url;
 
         public Connection getMYSQLConnection(String username, String password, String Schema){
