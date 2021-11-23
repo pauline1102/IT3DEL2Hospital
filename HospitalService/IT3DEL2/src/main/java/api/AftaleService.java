@@ -20,12 +20,6 @@ public class AftaleService {
     private Statement statement;
     private ResultSet resultSet;
 
-    // Altid tænk object-orienteret. Tænk på den virkelige verden og derefter lav det om til kode.
-    // En service er en der yder noget. Tænk på AftaleService som en sekretær der opretter og gemmer aftaler i databasen.
-    // Vi skal give vores "sekretær" adgang til databasen for at gøre det, og derfor skal vi give ham/hende adgang ved hjælp af vores connetion
-    // Nu hvor sekretæren har adgang, kan vi nemt oprette og gemme data i databasen.
-
-    // Dette er CRUD - Create, Read, Update, Delete metoder i selve programmet.
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -74,7 +68,7 @@ public class AftaleService {
 
 }
 
-// Her starter metoderne for at gemme data til databasen.
+
 
 
 
