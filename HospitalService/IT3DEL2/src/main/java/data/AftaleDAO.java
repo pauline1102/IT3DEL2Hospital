@@ -46,6 +46,7 @@ public class AftaleDAO {
             System.out.println("Ups.. Der opstod en fejl under oprettelsen af aftalen. Prøv igen eller kontakt udviklerne!");
             ex.printStackTrace();
         }
+
     }
 
 //    public void addAftale(Aftale nyAftale){

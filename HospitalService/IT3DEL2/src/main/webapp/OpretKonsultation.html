@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="rekcss.css">
 
+
 <script>
     async function opretKonsultation(){
 
@@ -22,7 +23,12 @@
     }
 
     async function hentKonsultation(){
-            let result = await fetch("rest/aftaler");
+            let result = await fetch("rest/aftaler", {
+                    headers: {
+                        "authorization": "Bearer " + localStorage.getItem("token")
+                    }
+                }
+                );
             console.log(result.status)
             if (result.status!=200){
             alert("noget gik galt!");
@@ -38,6 +44,8 @@
         let list = document.getElementById("aftaler");
         list.innerHTML=listelements
     }
+
+
 </script>
 
 </head>
@@ -55,7 +63,8 @@ div class="header" id="myHeader">
     <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
     <text class="header2">Elektronisk patient journal</text><br>
     <text class="header3">Anno 2021</text><br>
-    <p><a href="index.html"><input type="button" id="idButton" class="button1" value="Log ud"></a></p>
+    <p><a href="index.html"><input type="button" id="LogudButton" onclick="Logud" class="button1" value="Log ud"></a></p>
+
     <!--<p><button id="idButton2" class="button1">Gem</button></p>-->
 </div>
 
