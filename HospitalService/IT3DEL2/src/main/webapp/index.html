@@ -19,13 +19,18 @@
                 "content-type":"application/json"
             }
         })
-        alert(res);
+       // alert(res);
         let token= await res.text();
-        alert(token);
-        localStorage.setItem("token", token);
-        console.log(token);
-        window.location.href="PatientForside.html"
+     //   alert(token);
 
+        if (res.status==200){
+            localStorage.setItem("token", token);
+            console.log(token);
+            window.location.href="PatientForside.html"
+        }
+        else{
+            alert("du er ikke logget ind")
+        }
 
     }
     /*
@@ -103,13 +108,12 @@
 </div>
 
 <body>
-<!--
-<input type="button" onclick="login();" value="login">
--->
 
 <button onclick="Login();">Login</button>
 
+<!--
 <button onclick="validate();">validere</button>
+-->
 
 </body>
 </html>

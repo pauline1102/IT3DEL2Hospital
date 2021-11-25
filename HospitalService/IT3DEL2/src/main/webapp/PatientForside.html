@@ -10,13 +10,22 @@
 
 <script>
     async function Logud(){
-
-        localStorage.setItem("token","");
+        localStorage.setItem("token"," ");
         window.location.href="index.html"
 
     }
 
-
+    async function gotoopretkonsultation(){
+        let token = localStorage.getItem("token")
+        fetch("rest/tokentest",{
+            method:"POST",
+            body: token,
+            headers: {
+                "authorization": "Bearer "+localStorage.getItem("token")
+            }
+        })
+        window.location.href="OpretKonsultation.html"
+    }
 
 </script>
 
@@ -41,7 +50,7 @@
     <div class="Btncontainer">
         <div class="OpretKonsultationBtn">
            <p> <img src="kalendericon.jpg" id="kalenderbillede"></p>
-            <p><a href="OpretKonsultation.html"><input id="opretkonsultationknap" type="button" value="Opret konsultation"></a></p>
+            <p><a><input id="opretkonsultationknap" onclick="gotoopretkonsultation()" type="button" value="Opret konsultation"></a></p>
         </div>
     </div>
 <!--
