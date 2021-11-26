@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Date;
+
 public class Aftale {
 
     private String date;
@@ -34,3 +36,4 @@ public class Aftale {
         return this.date + " " + this.cpr;
     }
 }
+

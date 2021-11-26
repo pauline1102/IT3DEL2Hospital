@@ -9,9 +9,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class AftaleDAO {
     //Forbind til database
+    //private static Connection connection = new DBConnector().getMYSQLConnection("pauline", "Pauline1234", "sundtek");;
     private static Connection connection = new DBConnector().getMYSQLConnection("s205481", "iSdBO5cuIySWKV9I42kvo", "s205481");;
+
 
     public List<Aftale> getAftaler() {
         String getAftaler = "SELECT * FROM aftale";
@@ -56,3 +59,4 @@ public class AftaleDAO {
 //    }
 
 }
+

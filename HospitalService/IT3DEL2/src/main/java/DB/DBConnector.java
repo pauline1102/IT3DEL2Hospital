@@ -13,6 +13,7 @@ public class DBConnector {
         public Connection getMYSQLConnection(String username, String password, String Schema){
             url = MYSQLDriver + Schema + "?serverTimezone=Europe/Amsterdam&amp";
             try {
+                //sørger for at tomcat læser den her (eller noget)
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(url, username, password);
 
