@@ -1,25 +1,30 @@
 package api;
 
 import business.JWTHandler;
+import business.LoginController;
 import data.LoginData;
-import data.User;
+import data.UserDAO;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 
     @Path("login")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-
     public class LoginService {
+        private static LoginController loginController = new LoginController();
         @POST
-        public String postLoginData(LoginData login) {
-            if (login!=null && "brian".equals(login.getUsername()) && "kodeord".equals(login.getPassword())){
-                String token = JWTHandler.generateJwtToken(new User(login.getUsername(), ""));
-                System.out.println(token);
-                return  token;
+        @Consumes(MediaType.APPLICATION_JSON)
+        @Produces(MediaType.TEXT_PLAIN)
+        public String doLogin(LoginData loginData){
+            //returner en token hvis det går godt
+            return loginController.validateUser(loginData);
+        }
+    }
+
+    /*
+
             }
             throw new WebApplicationException("forkert brugernavn/kodeord",401);
         }
-    }
+
+     */

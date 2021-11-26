@@ -1,7 +1,7 @@
 package api;
 
 import business.JWTHandler;
-import data.User;
+import data.UserDAO;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 
     public class TestService {
         @POST
-        public User postToken(String token) {
+        public UserDAO postToken(String token) {
             return JWTHandler.validate(token);
         }
 
