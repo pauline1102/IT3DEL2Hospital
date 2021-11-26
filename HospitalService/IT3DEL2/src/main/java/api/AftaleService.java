@@ -2,7 +2,6 @@ package api;
 
 import data.Aftale;
 import data.AftaleDAO;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Connection;
@@ -21,17 +20,19 @@ public class AftaleService {
     private ResultSet resultSet;
 
 
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Aftale> getAftaler() { return aftaleDAO.getAftaler();
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void opretAftale(Aftale aftale) {
         aftaleDAO.addAftale(aftale);
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Aftale> getAftaler(){
-        return aftaleDAO.getAftaler();
-    }
+
 //
 //    @GET
 //    @Produces(MediaType.APPLICATION_JSON)

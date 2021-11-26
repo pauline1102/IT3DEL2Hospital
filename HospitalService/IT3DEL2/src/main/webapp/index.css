@@ -35,7 +35,7 @@ body{
 
     /*https://stackoverflow.com/questions/16832334/stick-button-to-right-side-of-div/16832402 */
 }
-#idButton{
+#LogudButton{
     position: absolute;
     right: 15px;
     top: 15px;
@@ -124,4 +124,12 @@ h8{
 #cprnummer{
     margin-left: 100px ;
     margin-top:20px;
+}
+
+#loginkasse2{
+margin-left: 35%; position: absolute; margin-top: 10px;
+}
+#loginvalider{
+    margin-left: 210px ;
+    margin-bottom:300px;
 }
