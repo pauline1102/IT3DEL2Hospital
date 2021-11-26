@@ -61,14 +61,6 @@ h1{
     color:cornflowerblue;
 }
 
-h7{
-    color:deepskyblue;
-}
-
-h8{
-    color:deepskyblue;
-
-}
 .button2{
     border-radius: 50%;
     border-color: black;
@@ -105,12 +97,22 @@ h8{
 }
 
 #brugernavn1{
-    position: absolute;
 
 }
 #loginknap{
-    margin-left: 210px ;
+    position: absolute;
+    float: right;
+    /*
+    RET DER HER MERE
+     */
+    /* margin-left: 210px ;
     margin-top:20px;
+
+    */
+}
+#username1{
+    float: left;
+
 }
 .button4{
     border-radius: 50%;
