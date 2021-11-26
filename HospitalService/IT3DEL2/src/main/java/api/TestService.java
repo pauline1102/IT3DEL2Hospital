@@ -1,3 +1,8 @@
+package api;
+
+import business.JWTHandler;
+import data.User;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 

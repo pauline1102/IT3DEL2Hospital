@@ -1,3 +1,5 @@
+package data;
+
 public class LoginData {
 
     private String username;
