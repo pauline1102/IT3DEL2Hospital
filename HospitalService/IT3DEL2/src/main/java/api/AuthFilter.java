@@ -1,3 +1,7 @@
+package api;
+
+import business.JWTHandler;
+
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
