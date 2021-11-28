@@ -16,10 +16,10 @@ public class UserDAO {
     }
 
     public static LoginData findUser(String username){
-        String findBruger = ("SELECT * FROM brugere WHERE username = ?");
+
         try{
             Connection connection = new DBConnector().getMYSQLConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(findBruger);
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
             preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();
             //Check om der var resultat og konverter til Java-Object (LoginData)
