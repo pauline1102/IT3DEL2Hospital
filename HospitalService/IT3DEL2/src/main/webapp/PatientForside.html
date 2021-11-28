@@ -26,7 +26,17 @@
         })
         window.location.href="OpretKonsultation.html"
     }
-
+    async function hentKonsultationVindue(){
+        let token = localStorage.getItem("token")
+        fetch("rest/tokentest",{
+            method:"POST",
+            body: token,
+            headers:{
+                "authorization": "Bearer "+localStorage.getItem("token")
+            }
+        })
+        window.location.href="HentKonsultation.html"
+    }
 </script>
 
 <body>
@@ -53,14 +63,14 @@
             <p><a><input id="opretkonsultationknap" onclick="gotoopretkonsultation()" type="button" value="Opret konsultation"></a></p>
         </div>
     </div>
-<!--
+
 
         <div class="RetIKonsultationBtn">
-            <img src="RetIKonsultation_ikon.png" style="width: 100%;%">
-            <button style="width: 100%">Ret i eksisterende konsultation</button>
+            <img src="RetIKonsultation_ikon.png">
+            <button onclick="hentKonsultationVindue();">Hent konsultation(er)</button>
         </div>
 
-    </div> -->
+    </div>
 
 
 

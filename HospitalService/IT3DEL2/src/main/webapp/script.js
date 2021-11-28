@@ -3,7 +3,7 @@ async function Login(){
     let formData = new FormData(formElement);
     let json = Object.fromEntries(formData);
     let res = await fetch(
-        "api/login",{
+        "rest/login",{
         method:"POST",
         body: JSON.stringify(json),
         headers:{

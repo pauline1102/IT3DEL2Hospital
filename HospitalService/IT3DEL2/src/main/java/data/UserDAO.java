@@ -11,15 +11,14 @@ public class UserDAO {
     private String username;
     private String password;
 
-
     public UserDAO(String username, String password) {
 
     }
 
     public static LoginData findUser(String username){
-        String findBruger = "SELECT * FROM brugere WHERE username = ?";
+        String findBruger = ("SELECT * FROM brugere WHERE username = ?");
         try{
-            Connection connection = new DBConnector().getMYSQLConnection("s205481", "iSdBO5cuIySWKV9I42kvo", "s205481");
+            Connection connection = new DBConnector().getMYSQLConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(findBruger);
             preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();

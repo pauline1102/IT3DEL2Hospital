@@ -9,6 +9,11 @@ public class LoginController {
     private static LoginData loginData;
     private static UserDAO userDAO = new UserDAO(loginData.getUsername(), "");
 
+    public static void setLoginData(LoginData loginData) {
+        LoginController.loginData = loginData;
+    }
+
+
     public String validateUser(LoginData loginData) {
         LoginData user = UserDAO.findUser(loginData.getUsername());
         if (user!=null && user.getPassword().equals(loginData.getUsername())){

@@ -23,7 +23,8 @@ public class AftaleService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Aftale> getAftaler() { return aftaleDAO.getAftaler();
+    public List<Aftale> getAftaler() {
+        return aftaleDAO.getAftaler();
     }
 
     @POST

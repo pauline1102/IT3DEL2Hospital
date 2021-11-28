@@ -8,7 +8,6 @@ import data.UserDAO;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-
     @Path("login")
     public class LoginService {
         private static LoginController loginController = new LoginController();
