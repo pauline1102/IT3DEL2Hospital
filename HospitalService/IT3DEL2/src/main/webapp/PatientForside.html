@@ -6,64 +6,21 @@
     <link rel="stylesheet" type="text/css" href="PFcss.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="rekcss.css">
+    <script src="patientFors.js"></script>
  </head>
-
-<script>
-    async function Logud(){
-        localStorage.setItem("token"," ");
-        window.location.href="index.html"
-
-    }
-
-    async function gotoopretkonsultation(){
-        let token = localStorage.getItem("token")
-        fetch("rest/tokentest",{
-            method:"POST",
-            body: token,
-            headers: {
-                "authorization": "Bearer "+localStorage.getItem("token")
-            }
-        })
-        window.location.href="OpretKonsultation.html"
-    }
-    async function hentKonsultationVindue(){
-        let token = localStorage.getItem("token")
-        fetch("rest/tokentest",{
-            method:"POST",
-            body: token,
-            headers:{
-                "authorization": "Bearer "+localStorage.getItem("token")
-            }
-        })
-        window.location.href="HentKonsultation.html"
-    }
-</script>
-
 <body>
-
 <div class="header" id="myHeader">
     <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
     <text class="header2">Elektronisk patient journal</text><br>
     <text class="header3">Anno 2021</text><br>
     <p><input type="button" id="LogudButton" onclick="Logud()" class="button1" value="Log ud"></p>
 </div>
-
-
-
-    <!--
-    <div class="valgt-patient">
-        <p>Fornavn:</p>
-        <p>Efternavn:</p>
-        <p>CPR-nummer: </p>
-    </div>
-    -->
     <div class="Btncontainer">
         <div id="OpretKonsultationBtn">
            <p> <img src="kalendericon.jpg" id="kalenderbillede"></p>
             <p><a><input id="opretkonsultationknap" onclick="gotoopretkonsultation()" type="button" value="Opret konsultation"></a></p>
         </div>
     </div>
-
     <div class="Btncontainer">
         <div id="RetIKonsultationBtn">
            <p><img src="konsultationsikon.jpg" id="konsultationsikon"></p>
@@ -71,9 +28,5 @@
         </div>
     </div>
     </div>
-
-
-
-
 </body>
 </html>

@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
         @POST
         @Consumes(MediaType.APPLICATION_JSON)
         @Produces(MediaType.TEXT_PLAIN)
-        public String doLogin(UserDAO loginData){
+        public String doLogin(LoginData loginData){
             //returner en token hvis det går godt
             return loginController.validateUser(loginData);
         }

@@ -41,6 +41,7 @@ async function hentCpr() {
     if (res.status != 200) {
         alert("cpr gik galt")
     }
+}
     /*
     let json1 = await result1.json1();
     console.log(json1)
@@ -76,6 +77,4 @@ async function hentCpr() {
     async function Logud() {
         localStorage.setItem("token", " ");
         window.location.href = "index.html"
-
-    }
 }

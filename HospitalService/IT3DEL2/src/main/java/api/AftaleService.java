@@ -2,8 +2,10 @@ package api;
 
 import data.Aftale;
 import data.AftaleDAO;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,12 +15,12 @@ import java.util.List;
 @Path("aftaler")
 public class AftaleService {
 
-    private AftaleDAO aftaleDAO = new AftaleDAO();;
+    private AftaleDAO aftaleDAO = new AftaleDAO();
+    ;
     private PreparedStatement preparedStatement;
     private Connection connection;
     private Statement statement;
     private ResultSet resultSet;
-
 
 
     @GET
@@ -34,15 +36,15 @@ public class AftaleService {
     }
 
 
-//
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("{cpr}")
-//    public List<Aftale> getAftale(@PathParam("cpr") String cpr) {
-//        //TODO: Make some real code
-//        throw new WebApplicationException("Ikke implementeret endnu", Response.Status.NOT_IMPLEMENTED);
-//    }
-//
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{cpr}")
+    public List<Aftale> getAftale(@PathParam("cpr") String cpr) {
+
+        //TODO: Make some real code
+        throw new WebApplicationException("Ikke implementeret endnu", Response.Status.NOT_IMPLEMENTED);
+    }
+
 //    @DELETE
 //    @Consumes(MediaType.APPLICATION_JSON)
 //    public void deleteAftale(String cpr) {
@@ -69,9 +71,6 @@ public class AftaleService {
 //    }
 
 }
-
-
-
 
 
 //        public String hentCpr (String cpr) throws NullPointerException {

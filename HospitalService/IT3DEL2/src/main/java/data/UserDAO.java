@@ -8,19 +8,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
-    private String username;
-    private String password;
-
-    public UserDAO(String username, String password) {
-
-    }
 
     public static LoginData findUser(String username){
 
         try{
-            Connection connection = new DBConnector().getMYSQLConnection();
+            Connection connection = DBConnector.getMYSQLConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
-          //  preparedStatement.setString(1,username);
+            preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();
             //Check om der var resultat og konverter til Java-Object (LoginData)
             if (resultSet.next()){

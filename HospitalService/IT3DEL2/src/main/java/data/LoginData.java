@@ -1,6 +1,13 @@
 package data;
 
 public class LoginData {
+    @Override
+    public String toString() {
+        return "LoginData{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 
     private String username;
     private String password;

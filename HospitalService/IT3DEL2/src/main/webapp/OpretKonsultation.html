@@ -5,39 +5,18 @@
     <title>Opret konsultation</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="rekcss.css">
-
-
-<script>
-    async function opretKonsultation(){
-
-        let form = document.getElementById("aftaleform");
-        let formData = new FormData(form)
-        let patientJson = Object.fromEntries(formData);
-        let res = await fetch("rest/aftaler", {
-            method:"POST",
-            body: JSON.stringify(patientJson),
-            headers:{
-               'content-type':"application/json",
-                "authorization": "Bearer " + localStorage.getItem("token")
-            }
-        })
-
-    }
-
-    async function Logud(){
-        localStorage.setItem("token"," ");
-        window.location.href="index.html"
-
-    }
-
-</script>
+    <script src="opretKons.js"></script>
 
 </head>
 <body>
 <div class="header" id="myHeader">
-    <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
-    <text class="header2">Elektronisk patient journal</text><br>
-    <text class="header3">Anno 2021</text><br>
+    <u class="underlineHeader">
+        <text class="header1">Sundhedsplatformen 2.0</text>
+    </u><br>
+    <text class="header2">Elektronisk patient journal</text>
+    <br>
+    <text class="header3">Anno 2021</text>
+    <br>
     <p><a><input type="button" id="LogudButton" onclick="Logud()" class="button1" value="Log ud"></a></p>
 </div>
 
@@ -50,25 +29,11 @@
             <input type="date" name="date">
             <input type="text" name="cpr" placeholder="CPR-nummer">
         </form>
-
         <br>
-
         <button onclick="opretKonsultation();">Opret konsultation</button>
         <br>
         <br>
-        <!--<button onclick="hentKonsultation();">Hent konsultation</button>
     </div>
-    <br>
-    <br>
-    <div>
-        <div class="tekstoverskrift">
-            Konsultationer i databasen
-        </div>
-        <ul id="aftaler">
-        </ul>
-    </div>
-    -->
-</div>
 </div>
 </body>
 </html>
