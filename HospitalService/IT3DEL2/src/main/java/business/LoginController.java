@@ -10,7 +10,7 @@ public class LoginController {
     public String validateUser(LoginData loginData) {
         LoginData user = UserDAO.findUser(loginData.getUsername());
         System.out.println("Logindata: " + loginData);
-        System.out.println("userFOund" + user);
+        System.out.println("userFound" + user);
         if (user!=null && user.getPassword().equals(loginData.getPassword())){
             String token = JWTHandler.generateJwtToken(loginData);
             System.out.println(token);

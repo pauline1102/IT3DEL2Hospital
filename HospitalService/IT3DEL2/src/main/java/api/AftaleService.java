@@ -1,5 +1,6 @@
 package api;
 
+import business.JWTHandler;
 import data.Aftale;
 import data.AftaleDAO;
 

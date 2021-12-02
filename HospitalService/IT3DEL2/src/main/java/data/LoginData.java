@@ -1,5 +1,7 @@
 package data;
 
+import api.LoginService;
+
 public class LoginData {
     @Override
     public String toString() {
