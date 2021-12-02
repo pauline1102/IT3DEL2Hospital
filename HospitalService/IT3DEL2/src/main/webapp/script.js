@@ -1,4 +1,4 @@
-async function Login(){
+async function doLogin(){
     let formElement = document.getElementById("form");
     let formData = new FormData(formElement);
     let json = Object.fromEntries(formData);
@@ -10,6 +10,7 @@ async function Login(){
             "content-type":"application/json"
         }
     })
+    //"rest/login"
     // alert(res);
     let token = await res.text();
     //   alert(token);

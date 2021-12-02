@@ -20,7 +20,7 @@ public class UserDAO {
         try{
             Connection connection = new DBConnector().getMYSQLConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
-            preparedStatement.setString(1,username);
+          //  preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();
             //Check om der var resultat og konverter til Java-Object (LoginData)
             if (resultSet.next()){

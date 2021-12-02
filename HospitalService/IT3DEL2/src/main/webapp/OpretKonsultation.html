@@ -24,29 +24,6 @@
 
     }
 
-    async function hentKonsultation(){
-            let result = await fetch("rest/aftaler", {
-                    headers: {
-                        "authorization": "Bearer " + localStorage.getItem("token")
-                    }
-                }
-                );
-            console.log(result.status)
-            if (result.status!=200){
-            alert("noget gik galt!");
-        }
-        let json = await result.json();
-        console.log(json)
-
-        let listelements =""
-        json.forEach(function(element){
-            listelements +=("<li>"+element.date+"</li>")
-        })
-
-        let list = document.getElementById("aftaler");
-        list.innerHTML=listelements
-    }
-
     async function Logud(){
         localStorage.setItem("token"," ");
         window.location.href="index.html"
@@ -57,30 +34,18 @@
 
 </head>
 <body>
-<!--
-HER LIGGER HEADER-KODEN :)
-div class="header" id="myHeader">
-    <u class="underlineHeader" color="dodgerblue"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
-    <text class="header2">Elektronisk patient journal</text><br>
-    <text class="header3">Anno 2021</text><br>
-    <p><button id="idButton" class="button1" >Logud</button></p>
-</div>
--->
 <div class="header" id="myHeader">
     <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
     <text class="header2">Elektronisk patient journal</text><br>
     <text class="header3">Anno 2021</text><br>
     <p><a><input type="button" id="LogudButton" onclick="Logud()" class="button1" value="Log ud"></a></p>
-
-    <!--<p><button id="idButton2" class="button1">Gem</button></p>-->
 </div>
 
 <div id="opretkonsdiv">
     <div id="opretkonsoverskrift">
         <p class="overskriftside"> Opret konsultation</p>
     </div>
-    <div>
-
+    <div id="opretkonskasse">
         <form id="aftaleform">
             <input type="date" name="date">
             <input type="text" name="cpr" placeholder="CPR-nummer">
@@ -91,7 +56,7 @@ div class="header" id="myHeader">
         <button onclick="opretKonsultation();">Opret konsultation</button>
         <br>
         <br>
-        <button onclick="hentKonsultation();">Hent konsultation</button>
+        <!--<button onclick="hentKonsultation();">Hent konsultation</button>
     </div>
     <br>
     <br>
@@ -102,6 +67,8 @@ div class="header" id="myHeader">
         <ul id="aftaler">
         </ul>
     </div>
+    -->
+</div>
 </div>
 </body>
 </html>

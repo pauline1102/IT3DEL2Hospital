@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Hent Konsultation</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="rekcss.css">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="rekcss.css" rel="stylesheet" type="text/css">
     <script src="hentkons.js"></script>
 </head>
 <body>
@@ -13,9 +13,7 @@
   <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
   <text class="header2">Elektronisk patient journal</text><br>
   <text class="header3">Anno 2021</text><br>
-  <p><a><input type="button" id="LogudButton" onclick="Logud()" class="button1" value="Log ud"></a></p>
-
-  <!--<p><button id="idButton2" class="button1">Gem</button></p>-->
+  <p><a><input class="button1" id="LogudButton" onclick="Logud()" type="button" value="Log ud"></a></p>
 </div>
 
 <div id="opretkonsdiv">
@@ -23,17 +21,21 @@
     <p class="overskriftside"> Hent konsultationer</p>
   </div>
 </div>
+<div id="hentkonsside">
   <div id="hentkonskasse">
+    <div class="tekstoverskrift">Vælg patient</div>
+    <br>
     <form id="formHentPati">
-    <input type="text" name="skrivcpr" id="skrivcpr" placeholder="Indtast CPR-nummer" required>
-  </form>
+      <input id="skrivcpr" name="skrivcpr" placeholder="Indtast CPR-nummer" required type="text">
+    </form>
     <br>
     <div>
-      <button onclick="hentKonsultation();">Hent konsultation</button>
+      <button id="hentkonsknap"onclick="hentKonsultation();">Hent konsultation</button>
     </div>
     <br>
     <br>
-    <div>
+  </div>
+    <div id="konsIDatabase">
       <div class="tekstoverskrift">
         Konsultationer i databasen
       </div>
