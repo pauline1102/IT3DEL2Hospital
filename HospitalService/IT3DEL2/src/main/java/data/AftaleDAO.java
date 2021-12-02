@@ -52,6 +52,26 @@ public class AftaleDAO {
 
     }
 
+    public List<Aftale> getAftaler(String findCpr) {
+        String getAftaler = "SELECT * FROM aftale WHERE CPR = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(getAftaler);
+            preparedStatement.setString(1,findCpr);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Aftale> aftaleList = new ArrayList<>();
+            while (resultSet.next()){
+                String cpr = resultSet.getString("CPR");
+                String date = resultSet.getString("date");
+                Aftale aftale = new Aftale(date,cpr);
+                aftaleList.add(aftale);
+            }
+            return aftaleList;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
 //    public void addAftale(Aftale nyAftale){
 //        //TODO tilføj aftaler til database
 //        System.out.println("Opretter aftale...");

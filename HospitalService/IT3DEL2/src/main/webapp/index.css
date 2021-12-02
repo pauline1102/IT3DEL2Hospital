@@ -1,6 +1,7 @@
-/* Style header */
+
 body{
     font-family: Calibri, serif;
+    background-color:white;
 }
 .header {
     background: lightblue;
@@ -42,20 +43,11 @@ body{
     padding-left: 15px;
     padding-right: 15px;
 }
-body{
-    background-color:white;
-}
+
 div{
     color:black;
 
 }
-.border{
-    color:ghostwhite;
-
-<!-- border-radius: 50%;
--->
-}
-
 
 h1{
     color:cornflowerblue;

@@ -10,7 +10,6 @@ async function doLogin(){
             "content-type":"application/json"
         }
     })
-    //"rest/login"
     // alert(res);
     let token = await res.text();
     //   alert(token);

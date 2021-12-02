@@ -40,9 +40,9 @@ public class AftaleService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{cpr}")
     public List<Aftale> getAftale(@PathParam("cpr") String cpr) {
-
+        return aftaleDAO.getAftaler(cpr);
         //TODO: Make some real code
-        throw new WebApplicationException("Ikke implementeret endnu", Response.Status.NOT_IMPLEMENTED);
+        //throw new WebApplicationException("Ikke implementeret endnu", Response.Status.NOT_IMPLEMENTED);
     }
 
 //    @DELETE

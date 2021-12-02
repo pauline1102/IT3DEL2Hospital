@@ -12,7 +12,9 @@ async function opretKonsultation() {
         }
     })
 }
-
+    async function Tilbage(){
+        window.location.href = "PatientForside.html"
+    }
     async function Logud() {
         localStorage.setItem("token", " ");
         window.location.href = "index.html"
