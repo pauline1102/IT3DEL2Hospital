@@ -19,11 +19,3 @@ import javax.ws.rs.core.MediaType;
             return loginController.validateUser(loginData);
         }
     }
-
-    /*
-
-            }
-            throw new WebApplicationException("forkert brugernavn/kodeord",401);
-        }
-
-     */

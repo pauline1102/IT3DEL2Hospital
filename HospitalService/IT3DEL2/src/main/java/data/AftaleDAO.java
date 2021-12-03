@@ -12,8 +12,6 @@ import java.util.List;
 
 
 public class AftaleDAO {
-    //Forbind til database
-    //private static Connection connection = new DBConnector().getMYSQLConnection("pauline", "Pauline1234", "sundtek");;
     private static Connection connection = new DBConnector().getMYSQLConnection();;
 
 
@@ -72,13 +70,5 @@ public class AftaleDAO {
         }
         return null;
     }
-
-//    public void addAftale(Aftale nyAftale){
-//        //TODO tilføj aftaler til database
-//        System.out.println("Opretter aftale...");
-//        this.aftaleList.add(nyAftale);
-//        System.out.println("Aftale oprettet! " + nyAftale);
-//    }
-
 }
 
