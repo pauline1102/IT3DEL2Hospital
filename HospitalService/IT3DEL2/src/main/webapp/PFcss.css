@@ -1,22 +1,53 @@
 .Btncontainer{
-width: 100%;
+    width:100%;
     position: relative;
 
 }
 
-.OpretKonsultationBtn{
+#OpretKonsultationBtn{
     width: 200px;
     position: absolute;
     float: left;
-    margin-left: 50%;
+    margin-left: 30%;
+    margin-top: 50px;
+   /* margin-left: 25%;
+    margin-top: 50px;
+    */
+  transform: translate(-50%);
+}
+#RetIKonsultationBtn{
+    width: 200px;
+    position: absolute;
+    float: left;
+    margin-left: 65%;
     margin-top: 50px;
     transform: translate(-50%);
+
 }
 #kalenderbillede{
     width: 100%;
 
 }
 
+#patientforsidekasse{
+    width: 100%;
+    position: relative;
+}
+
+
+#konsultationsikon{
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid darkblue;
+    height: 200px;
+
+}
+
+
 #opretkonsultationknap{
+    width: 100%;
+}
+
+#hentkonsknap{
     width: 100%;
 }

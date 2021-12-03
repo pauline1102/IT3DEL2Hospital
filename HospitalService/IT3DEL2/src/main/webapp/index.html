@@ -6,35 +6,8 @@
     <title>index/Forside</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="rekcss.css">
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 </head>
-    <!--
-    async function validate(){
-        let token = localStorage.getItem("token")
-        fetch("rest/tokentest",{
-            method:"POST",
-            body: token,
-            headers: {
-                "authorization": "Bearer "+localStorage.getItem("token")
-            }
-        })
-            .then(
-                (response)=> {
-                    if (response.status ==200){
-                        response.text().then(
-                            (user)=> {
-                                console.log("Got Token: " + user)
-                                localStorage.setItem("user",user);
-                                window.location.href="PatientForside.html"
-
-                            })
-                    }
-                   }
-
-            ).catch(()=>alert("Uha - login fejlede" ))
-    }
-     -->
-
 <div class="header" id="myHeader">
     <u class="underlineHeader">
         <text class="header1">Sundhedsplatformen 2.0</text>
@@ -43,8 +16,6 @@
     <br>
     <text class="header3">Anno 2021</text>
     <br>
-    <!--<p><button id="idButton" class="button1" >Annuller</button></p> -->
-    <!-- <p><button id="iddButton" class="button2" >Gem</button></p>-->
 </div>
 
 <div>
@@ -64,13 +35,11 @@
                 <label for="password">Kodeord:</label><br>
             </div>
             <div>
-                <input name="password" type="password" id="password">
+                <input name="password" id="password" type="password">
             </div>
     </form>
         <br>
-    <div id="loginknap">
-        <button onclick="Login();">Login</button>
-    </div>
+        <button onclick="doLogin();">Login</button>
     </div>
 </div>
 

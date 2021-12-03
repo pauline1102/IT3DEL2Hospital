@@ -1,7 +1,7 @@
 package business;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import data.User;
+import data.LoginData;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
@@ -17,7 +17,7 @@ public class JWTHandler {
     private static Key key;
     private static final int TOKEN_EXPIRY = 2880; //2 days
 
-    public static String generateJwtToken(User user) {
+    public static String generateJwtToken(LoginData user) {
         Calendar expiry = Calendar.getInstance();
         expiry.add(Calendar.MINUTE, TOKEN_EXPIRY);
         return Jwts.builder()
@@ -41,7 +41,7 @@ public class JWTHandler {
         return key;
     }
     // Validering af token
-    public static User validate(String authentication) {
+    public static LoginData validate(String authentication) {
         System.out.println(authentication);
         if(authentication == null){
             throw new NotAuthorizedException("ingen header");
@@ -57,7 +57,7 @@ public class JWTHandler {
                     .getBody();
             System.out.println("test2");
             ObjectMapper mapper = new ObjectMapper();
-            User user = mapper.convertValue(claims.get("user"), User.class);
+            LoginData user = mapper.convertValue(claims.get("user"), LoginData.class);
             System.out.println(user);
             return user;
         } catch (JwtException e){

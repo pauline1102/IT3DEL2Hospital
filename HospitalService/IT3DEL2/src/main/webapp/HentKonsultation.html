@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hent Konsultation</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="rekcss.css" rel="stylesheet" type="text/css">
+    <script src="hentkons.js"></script>
+</head>
+<body>
+
+<div class="header" id="myHeader">
+  <u class="underlineHeader"><text class="header1">Sundhedsplatformen 2.0</text></u><br>
+  <text class="header2">Elektronisk patient journal</text><br>
+  <text class="header3">Anno 2021</text><br>
+  <p><button id="idButton2" class="button1" onclick="Logud()" >Log ud</button></p>
+  <p><button id="iddButton" class="button1" onclick="Tilbage()" >Tilbage</button></p>
+</div>
+
+<div id="opretkonsdiv">
+  <div id="opretkonsoverskrift">
+    <p class="overskriftside"> Hent konsultationer</p>
+  </div>
+</div>
+<div id="hentkonsside">
+  <div id="hentkonskasse">
+    <div class="tekstoverskrift">Vælg patient</div>
+    <br>
+    <form id="formHentPati">
+      <input id="skrivcpr" name="skrivcpr" placeholder="Indtast CPR-nummer" required type="text">
+    </form>
+    <br>
+    <div>
+      <button id="hentkonsknap" onclick="hentKonsultationBycpr();">Hent konsultation</button>
+    </div>
+    <br>
+    <br>
+  </div>
+    <div id="konsIDatabase">
+      <div class="tekstoverskrift">
+        Konsultationer i databasen
+      </div>
+      <ul id="aftaler">
+      </ul>
+    </div>
+</div>
+</body>
+</html>

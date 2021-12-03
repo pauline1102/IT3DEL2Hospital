@@ -1,6 +1,7 @@
 package data;
 
 import DB.DBConnector;
+import api.AftaleService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +12,7 @@ import java.util.List;
 
 
 public class AftaleDAO {
-    //Forbind til database
-    //private static Connection connection = new DBConnector().getMYSQLConnection("pauline", "Pauline1234", "sundtek");;
-    private static Connection connection = new DBConnector().getMYSQLConnection("s205481", "iSdBO5cuIySWKV9I42kvo", "s205481");;
+    private static Connection connection = new DBConnector().getMYSQLConnection();;
 
 
     public List<Aftale> getAftaler() {
@@ -52,12 +51,24 @@ public class AftaleDAO {
 
     }
 
-//    public void addAftale(Aftale nyAftale){
-//        //TODO tilføj aftaler til database
-//        System.out.println("Opretter aftale...");
-//        this.aftaleList.add(nyAftale);
-//        System.out.println("Aftale oprettet! " + nyAftale);
-//    }
-
+    public List<Aftale> getAftaler(String findCpr) {
+        String getAftaler = "SELECT * FROM aftale WHERE CPR = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(getAftaler);
+            preparedStatement.setString(1,findCpr);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Aftale> aftaleList = new ArrayList<>();
+            while (resultSet.next()){
+                String cpr = resultSet.getString("CPR");
+                String date = resultSet.getString("date");
+                Aftale aftale = new Aftale(date,cpr);
+                aftaleList.add(aftale);
+            }
+            return aftaleList;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
 }
 

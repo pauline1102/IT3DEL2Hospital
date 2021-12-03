@@ -1,6 +1,7 @@
-/* Style header */
+
 body{
     font-family: Calibri, serif;
+    background-color:white;
 }
 .header {
     background: lightblue;
@@ -42,20 +43,11 @@ body{
     padding-left: 15px;
     padding-right: 15px;
 }
-body{
-    background-color:white;
-}
+
 div{
     color:black;
 
 }
-.border{
-    color:ghostwhite;
-
-<!-- border-radius: 50%;
--->
-}
-
 
 h1{
     color:cornflowerblue;
@@ -134,4 +126,26 @@ margin-left: 35%; position: absolute; margin-top: 10px;
 #loginvalider{
     margin-left: 210px ;
     margin-bottom:300px;
+}
+#hentkonsside{
+    width: 100%;
+    position: relative;
+}
+#hentkonskasse{
+    position: absolute;
+    margin-left: 30%;
+    transform: translate(-50%);
+    margin-top: 30px;
+    float: left;
+
+}
+#konsIDatabase{
+    position:absolute;
+    float: left;
+    margin-left: 60%;
+    margin-top: 30px;
+}
+
+#hentkonsknap{
+    width: 100%;
 }
